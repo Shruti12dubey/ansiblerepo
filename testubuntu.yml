@@ -3,8 +3,8 @@
   hosts: localhost
   tasks:
     - name: test version of ubuntu
-      command: date
-      register: date_output
-    - name: priting date
+      command: cat /etc/os-release
+      register: version
+    - name: print the value of version
       debug:
-        msg: "{{ date_output }}"
+        msg: "{{ version.stdout }}"

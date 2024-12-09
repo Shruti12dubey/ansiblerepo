@@ -15,4 +15,4 @@
          - name: print
            debug:
              msg: "{{ ubuntu_version.split('.')|first }}"
-        when: ansible_os_family == "ubuntu"
+       

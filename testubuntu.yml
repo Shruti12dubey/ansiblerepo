@@ -4,3 +4,7 @@
   tasks:
     - name: test version of ubuntu
       command: date
+      register: date_output
+    - name: priting date
+      debug:
+        msg: "{{ date_output }}"

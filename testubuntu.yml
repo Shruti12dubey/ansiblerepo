@@ -14,4 +14,4 @@
 
          - name: print
            debug:
-             msg: "{{ ubuntu_version.split('.')|first }}"
+             msg: "{{ ubuntu_version }}"

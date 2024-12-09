@@ -10,4 +10,4 @@
            
          - name: print
            debug:
-             msg: "{{ ubuntu_version }}"
+             msg: "{{ ubuntu_version.stdout_lines }}"

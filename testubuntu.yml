@@ -7,11 +7,7 @@
          - name: printing ubuntu version
            command: cat /etc/os-release
            register: ubuntu_version
-
-         - name: printing ubuntu version
-           set_fact:
-              ubuntu_version: "{{ ubuntu_version.stdout | regex_search('[A-Z][a-z]{1,} [0-9]{1,}.[0-9]{1,}.[0-9]{1,}') }}"
-
+           
          - name: print
            debug:
              msg: "{{ ubuntu_version }}"

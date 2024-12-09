@@ -1,10 +1,18 @@
 ---
-- name: testing ubuntu file
-  hosts: localhost
-  tasks:
-    - name: test version of ubuntu
-      command: cat /etc/os-release
-      register: version
-    - name: print the value of version
-      debug:
-        msg: "{{ version.stdout }}"
+  - name: testing ubuntu version
+    hosts: localhost
+    tasks:
+      - name : running block
+        block:
+         - name: printing ubuntu version
+           command: cat /etc/os-release
+           register: ubuntu_version
+
+         - name: printing ubuntu version
+           set_fact:
+              ubuntu_version: "{{ ubuntu_version.stdout | regex_search('[A-Z][a-z]{1,} [0-9]{1,}.[0-9]{1,}.[0-9]{1,}') }}"
+
+         - name: print
+           debug:
+             msg: "{{ ubuntu_version.split('.')|first }}"
+        when: ansible_os_family == "ubuntu"

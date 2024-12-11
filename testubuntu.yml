@@ -2,6 +2,14 @@
   - name: testing ubuntu version
     hosts: localhost
     tasks:
+      - name: checking user
+        shell: whoami
+        register: shruti_test
+
+      - name: shruti_user
+        debug:
+          msg: "{{ shruti_test }}"
+          
       - name : running block
         block:
          - name: printing ubuntu version

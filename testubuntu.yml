@@ -1,6 +1,7 @@
 ---
   - name: testing ubuntu version
     hosts: localhost
+    become: true
     tasks:
       - name: checking user
         shell: whoami

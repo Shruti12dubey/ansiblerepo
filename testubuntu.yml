@@ -1,7 +1,7 @@
 ---
   - name: testing ubuntu version
     hosts: localhost
-    become: true
+    become_user: root
     tasks:
       - name: checking user
         shell: whoami

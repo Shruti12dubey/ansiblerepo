@@ -5,7 +5,7 @@
     tasks:
       - name: checking user
         shell: whoami
-        register: shruti_test
+        register: shruti_test2
 
       - name: shruti_user
         debug:

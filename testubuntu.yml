@@ -9,7 +9,7 @@
           
       - name : running block
         block:
-         - name: printing ubuntu version
+         - name: printing ubuntu version2
            command: cat /etc/os-release
            register: ubuntu_version
            

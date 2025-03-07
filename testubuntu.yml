@@ -3,10 +3,6 @@
     hosts: localhost
     become_user: root
     tasks:
-      - name: checking user
-        shell: whoami
-        register: shruti_test
-
       - name: shruti_user
         debug:
           msg: "{{ shruti_test }}"

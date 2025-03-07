@@ -3,7 +3,7 @@
     hosts: localhost
     become_user: root
     tasks:
-      - name: shruti_user
+      - name: shruti_user1
         debug:
           msg: "{{ shruti_test }}"
           
